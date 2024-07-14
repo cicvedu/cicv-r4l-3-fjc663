@@ -54,6 +54,11 @@ impl Device {
         unsafe { &*ptr.cast() }
     }
 
+    /// 获取 net_device 指针
+    pub unsafe fn get_net_device_ptr(&self) -> *mut bindings::net_device {
+        self.0.get()
+    }
+
     /// Sets carrier.
     pub fn netif_carrier_on(&self) {
         // SAFETY: The netdev is valid because the shared reference guarantees a nonzero refcount.
@@ -476,6 +481,14 @@ impl Napi {
         // SAFETY: The existence of a shared reference means `self.0` is valid.
         unsafe {
             bindings::napi_enable(self.0.get());
+        }
+    }
+
+    /// Disable NAPI scheduling.
+    pub fn disable(&self) {
+        // SAFETY: The existence of a shared reference means `self.0` is valid.
+        unsafe {
+            bindings::napi_disable(self.0.get());
         }
     }
 

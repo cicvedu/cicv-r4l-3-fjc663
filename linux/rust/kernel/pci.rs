@@ -271,6 +271,11 @@ impl Device {
         Self { ptr }
     }
 
+    /// 获取 pci_dev 指针
+    pub unsafe fn get_pci_device_ptr(&self) -> *mut bindings::pci_dev {
+        self.ptr
+    }
+
     /// enables bus-mastering for device
     pub fn set_master(&self) {
         // SAFETY: By the type invariants, we know that `self.ptr` is non-null and valid.
