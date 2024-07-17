@@ -73,7 +73,7 @@ ip addr add 10.0.2.15/255.255.255.0 dev eth0
 ip route add default via 10.0.2.1
 ping 10.0.2.2
 ````
-![](/images/img4_1.png)
+![](./images/img4_1.png)
 
 ```shell
 rmmod r4l_e1000_demo.ko
@@ -84,4 +84,4 @@ ip addr add 10.0.2.15/255.255.255.0 dev eth0
 ip route add default via 10.0.2.1
 ping 10.0.2.2
 ```
-![](/images/img4_2.png)
+![](./images/img4_2.png)

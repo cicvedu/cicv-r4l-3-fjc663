@@ -239,15 +239,15 @@ cd /mnt/002_completion
 ./load_module.sh
 cat /dev/completion
 ```
-![](/images/img6_1.png)  
+![](./images/img6_1.png)  
 
 **在console 2运行`echo "something" > /dev/completion`命令后，console 1变为：**
 
-![](/images/img6_3.png)
+![](./images/img6_3.png)
 
 ***console 2***
 ```shell
 telnet localhost 7023
 echo "something" > /dev/completion
 ```
-![](/images/img6_2.png)
+![](./images/img6_2.png)

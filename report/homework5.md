@@ -4,7 +4,7 @@
 ```shell
 make LLVM=1 menuconfig
 ```
-![](/images/img5_1.png)
+![](./images/img5_1.png)
 重新编译
 ```shell
 make LLVM=1 -j$(nproc)
@@ -60,7 +60,7 @@ fn read(_this: &Self, _file: &file::File, _writer: &mut impl kernel::io_buffer::
     }
 ```
 ### 3. 测试结果
-![](/images/img5_2.png)
+![](./images/img5_2.png)
 
 ### 4.问题回答
 Q：作业5中的字符设备/dev/cicv是怎么创建的？它的设备号是多少？它是如何与我们写的字符设备驱动关联上的？

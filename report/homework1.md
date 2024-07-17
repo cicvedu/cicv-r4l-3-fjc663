@@ -9,7 +9,7 @@
 ```bash
 make x86_64_defconfig
 ```
-![](/images/img1_1.png)
+![](./images/img1_1.png)
 
 ### 2. 交互式修改内核配置
 这条命令用于在生成的默认配置基础上进一步定制内核配置。具体步骤如下：
@@ -23,7 +23,7 @@ make x86_64_defconfig
 ```bash
 make LLVM=1 menuconfig
 ```
-![](/images/img1_2.png)
+![](./images/img1_2.png)
 
 ### 3. 并行编译内核
 - LLVM=1：继续使用LLVM编译器工具链。

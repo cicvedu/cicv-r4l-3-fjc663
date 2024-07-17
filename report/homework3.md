@@ -47,7 +47,7 @@ obj-$(CONFIG_SAMPLE_RUST_HELLOWORLD)		+= rust_helloworld.o
 make LLVM=1 menuconfig
 ```
 路径：Kernel hacking > Sample Kernel code > Rust samples > &lt;M&gt;Print Helloworld in Rust (NEW)
-![](/images/img3_1.png)
+![](./images/img3_1.png)
 
 ### 4. 运行build_image.sh脚本
 将在samples/rust下的rust_helloworld.ko的文件复制到src_e1000/rootfs目录下，
@@ -64,4 +64,4 @@ dmesg
 ```
 - insmod：加载模块  
 - dmesg：查看内核日志  
-  ![](/images/img3_2.png)
+  ![](./images/img3_2.png)
