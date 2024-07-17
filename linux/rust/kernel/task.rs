@@ -196,6 +196,48 @@ impl Task {
         // running.
         unsafe { bindings::wake_up_process(self.0.get()) };
     }
+
+
+    /// 等待任务变得不活跃或达到指定的状态。
+    ///
+    /// 这个方法会阻塞，直到指定的任务变得不活跃或者达到了 `match_state` 状态。
+    ///
+    /// # 参数
+    ///
+    /// * `match_state` - 你希望任务达到的状态。状态标志应符合内核定义的状态常量。
+    ///
+    /// # 返回
+    ///
+    /// 返回一个 `core::ffi::c_ulong`，表示等待操作的结果。这个值通常表示等待的时间或状态。
+    ///
+    /// # 示例
+    ///
+    /// ```
+    /// let task = Task::current();
+    /// let result = task.wait_task_inactive(0); // 示例状态
+    pub fn wait_task_inactive(&self, match_state: core::ffi::c_uint){
+        // SAFETY: 通过类型不变性，我们知道 `self.0.get()` 是非空且有效的。
+        unsafe { bindings::wait_task_inactive(self.0.get(), match_state) };
+    }
+
+    /// 唤醒处于指定状态的任务。
+    ///
+    /// 这个方法会唤醒所有处于 `tate` 状态的任务，使其能够继续运行。
+    ///
+    /// # 参数
+    ///
+    /// * `state` - 你希望唤醒的任务状态。状态标志应符合内核定义的状态常量。
+    ///
+    /// # 示例
+    ///
+    /// ```
+    /// let task = Task::current();
+    /// task.wake_up_state(1); // 示例状态
+    /// ```
+    pub fn wake_up_state(&self, state: core::ffi::c_uint){
+        unsafe {bindings::wake_up_state(self.0.get(), state)};
+    }
+
 }
 
 // SAFETY: The type invariants guarantee that `Task` is always ref-counted.

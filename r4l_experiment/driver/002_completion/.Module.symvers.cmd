@@ -1,0 +1,1 @@
+cmd_/root/learn/cicv-r4l-3-fjc663/r4l_experiment/driver/002_completion/Module.symvers :=  sed 's/ko$$/o/'  /root/learn/cicv-r4l-3-fjc663/r4l_experiment/driver/002_completion/modules.order | scripts/mod/modpost      -o /root/learn/cicv-r4l-3-fjc663/r4l_experiment/driver/002_completion/Module.symvers -e -i Module.symvers -T - 

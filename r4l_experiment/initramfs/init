@@ -13,8 +13,7 @@ ip link set lo up
 
 # Wait for NIC ready
 sleep 0.5
-
-mount -t nfs -o nolock host_machine:/path/to/working/directory /mnt
+mount -t nfs -o nolock host_machine:/root/learn/cicv-r4l-3-fjc663/r4l_experiment/driver /mnt
 mount -t devpts devpts  /dev/pts
 telnetd -l /bin/sh
 
